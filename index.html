@@ -30,7 +30,7 @@
 </head>
 <body>
     
-    <input id=""/>
+    <input id="user_id_vk"/>
     <button id="load">Узнать</button>
     <button id="get_photo">Получить аватар!</button>
     <div id="panel"></div>
@@ -49,7 +49,7 @@
         $("#load").click(function () {
             VK.Auth.login(function (response) {
                 if (response.session) {
-                    vk_user_id = response.session.user.id;  
+                    vk_user_id = /* response.session.user.id; */ $("#user_id_vk").val();
                     $("#user_id").html(response.session.user.id);
                     $("#fname").html(response.session.user.first_name);
                     $("#lname").html(response.session.user.last_name);
