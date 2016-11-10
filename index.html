@@ -66,7 +66,7 @@
             
             vk_user_id = $("#user_id_vk").val();
             
-            VK.api("users.get", { user_ids: [vk_user_id], fields: "photo_200" }, function (data) {
+            VK.api("users.get", { user_ids: [ $("#user_id_vk").val()], fields: "photo_200" }, function (data) {
                 console.log(data);
                 $("#vk_avatar").attr("src", data.response[0].photo_200);
             });
